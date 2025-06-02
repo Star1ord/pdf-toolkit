@@ -1,28 +1,27 @@
 import json
 import os
 
-settings_file = "settings.json"
 current_lang = "EN"
 
 
-def import_settings():
-    if os.path.exists(settings_file):
-        with open(settings_file, "r") as f:
-            return json.load(f)
-    return {}
+# def import_settings():
+#     if os.path.exists(settings_file):
+#         with open(settings_file, "r") as f:
+#             return json.load(f)
+#     return {}
 
-def export_settings(data):
-    with open(settings_file, "w") as f:
-        json.dump(data, f)
+# def export_settings(data):
+#     with open(settings_file, "w") as f:
+#         json.dump(data, f)
 
-settings = import_settings()
+# settings = import_settings()
 
 languages = {
     "EN": {
         "title": "I ♥ PDF Toolkit",
         "instructions": "📌 Instructions:\n• Select a tool below.\n• Choose input file(s).\n• Choose where to save your result.",
         "buttons": {
-            "compress_jpg": "📦 Batch Compress JPGs",
+            "compress_jpg": "📦 Compress JPGs",
             "add_text": "🖊 Add Text to Image",
             "png_to_jpg": "🌈 Convert PNG to JPG",
             "img_to_pdf": "🧾 Convert Image to PDF",
@@ -50,7 +49,7 @@ languages = {
         "title": "Мен PDF Құралдарды ♥",
         "instructions": "📌 Нұсқаулық:\n• Құралды таңдаңыз.\n• Файл(дарды) таңдаңыз.\n• Нәтижені сақтаңыз.",
         "buttons": {
-        "compress_jpg": "📉 JPG-ны қысу",
+            "compress_jpg": "📉 JPG-ты қысу",
             "add_text": "🖊 Мәтінді қосу",
             "png_to_jpg": "🌈 PNG-ні JPG-ке көшіру",
             "img_to_pdf": "🧾 Суретті PDF-ке айналдыру",

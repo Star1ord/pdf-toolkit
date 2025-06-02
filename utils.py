@@ -1,6 +1,5 @@
 from tkinter import messagebox
 from datetime import datetime
-from config import settings_file
 
 def show_success(msg, status_label=None):
     messagebox.showinfo("Success", msg)
@@ -18,12 +17,15 @@ def on_drop(event):
 
 
 def switch_language(lang_code, components, languages):
-    components["current_lang"][0] = lang_code  # list for mutability
-    root = components["root"]
-    root.title(languages[lang_code]["title"])
-
-    components["instruction_heading"].config(text=languages[lang_code]["instructions"])
+    if "current_lang" not in components:
+        components["current_lang"] = [lang_code]
+    else:
+        components["current_lang"][0] = lang_code
+    
+    # Update instruction text
     components["instruction_label"].config(text=languages[lang_code]["instructions"])
+    # Update window title
+    components["root"].title(languages[lang_code]["title"])
 
     labels = languages[lang_code]["buttons"]
     components["btn_compress_jpg"].config(text=labels["compress_jpg"])

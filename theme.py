@@ -1,5 +1,5 @@
-def toggle_night_mode(components):
-    root = components["root"]
+def toggle_night_mode(root, components):
+    # root = components["root"]
     title_label = components["title_label"]
     instruction_label = components["instruction_label"]
     status_label = components["status_label"]
@@ -27,9 +27,6 @@ def toggle_night_mode(components):
     status_label.configure(bg=new_bg, fg=fg)
     instruction_label.configure(bg=inst_bg, fg=fg)
     inst_frame.configure(bg=inst_bg)
-
-    # Update title and instruction heading colors
-    title_label.configure(bg=new_bg, fg="#1a73e8" if new_bg == light_mode else "#80caff")
     
     # Update section label fonts (Image Tools, PDF Tools)
     img_frame.configure(fg=fg)
